@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./gradepromax.css">
+</head>
+<body>
+   
+     <div class="color">
+      <center> <h1 style="color: yellow;">RITE GRADE</h1></center>
+     
+        <input type="text" id="userInput">
+         <button onclick="grade()">CHECK GRADE</button>
+         <h1 style="font-size: 50px; color: yellow;" id="class"></h1>
+      </div>
+      <script>
+         function grade(){
+            var failureSong =  new Audio("wah-wah-sad-trombone-6347.mp3")
+            var fairSong = new Audio("failure-1-89170.mp3 ")
+            var poorSong = new Audio("fail-trombone-03.mp3 ")
+            var creditSong = new Audio("invalid-selection-39351.mp3")
+            var goodSong = new Audio("crowd-of-boys-cheering-102732.mp3")
+            var bestSong = new Audio("crowd-of-boys-cheering-102732.mp3")
+            var outSong = new Audio("crowd-of-boys-cheering-102732.mp3")
+            var inSong = new Audio("invalid-selection-39351.mp3")
+            
+
+            var score = userInput.value
+            if(score>0 && score<=39){
+               document.getElementById("class").innerHTML = "F"+"<img src='200w.gif' alt=''>"
+            failureSong.play()
+         } else if(score>39 && score<=49){
+            document.getElementById("class").innerHTML = "E"
+            fairSong.play()
+         } else if(score>49 && score<=59){
+            document.getElementById("class").innerHTML = "D"
+            poorSong.play()
+         } else if(score>59 && score<=69){
+            document.getElementById("class").innerHTML = "C"
+            creditSong.play()
+         } else if(score>69 && score<=79){
+            document.getElementById("class").innerHTML = "B"
+            goodSong.play()
+         } else if(score>79 && score<=95){
+            document.getElementById("class").innerHTML = "A"
+            bestSong.play()
+         } else if(score>95 && score<=100){
+            document.getElementById("class").innerHTML = "OUTSTANDING"
+            outSong.play()
+         } else if(score>100){
+            document.getElementById("class").innerHTML = "Invalid Input"
+            inSong.play()
+         } else if(typeof score=="string"){
+            document.getElementById("class").innerHTML = "SCORES CANNOT BE IN LETTERS"
+            inSong.play()
+        //  } else if(score==""){
+        //     document.getElementById("class").innerText = "Invalid"
+         }
+         }
+    </script>
+</body>
+</html>
